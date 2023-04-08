@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  
+   
+  
+  
+  
+  
+  <display-name>Cart</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <filter>
+        <filter-name>SecurityFilter</filter-name>
+        <filter-class>filters.SecurityFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>XSSFilter</filter-name>
+        <filter-class>filters.XSSFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>XSSFilter</filter-name>
+        <url-pattern>/ChangeFeatures</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>SecurityFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+  
+  
+  
+  
+  <servlet>
+      <servlet-name>actionCategorie</servlet-name>
+      <servlet-class>controlers.actionCategorie</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>actionCategorie</servlet-name>
+      <url-pattern>/ADMIN/actionCategorie</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>actionPhone</servlet-name>
+      <servlet-class>controlers.actionPhone</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>actionPhone</servlet-name>
+      <url-pattern>/ADMIN/actionPhone</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>actionAdmin</servlet-name>
+      <servlet-class>controlers.adminLogin</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>actionAdmin</servlet-name>
+      <url-pattern>/ADMIN/actionAdmin</url-pattern>
+   </servlet-mapping>
+  
+   <servlet>
+      <servlet-name>accountClient</servlet-name>
+      <servlet-class>controlers.accountClient</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>accountClient</servlet-name>
+      <url-pattern>/accountClient</url-pattern>
+   </servlet-mapping>
+   
+     <servlet>
+      <servlet-name>addToCart</servlet-name>
+      <servlet-class>controlers.addToCart</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>addToCart</servlet-name>
+      <url-pattern>/addToCart</url-pattern>
+   </servlet-mapping>
+   
+    <servlet>
+      <servlet-name>removeFromCart</servlet-name>
+      <servlet-class>controlers.removeFromCart</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>removeFromCart</servlet-name>
+      <url-pattern>/removeFromCart</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>checkout</servlet-name>
+      <servlet-class>controlers.checkout</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>checkout</servlet-name>
+      <url-pattern>/checkout</url-pattern>
+   </servlet-mapping>
+   
+     <servlet>
+      <servlet-name>Logout</servlet-name>
+      <servlet-class>controlers.Logout</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>Logout</servlet-name>
+      <url-pattern>/Logout</url-pattern>
+   </servlet-mapping>
+  
+</web-app>
